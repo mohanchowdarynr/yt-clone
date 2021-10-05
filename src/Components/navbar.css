@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF0000;
+    height: 60px;
+    color: white;
+}
+.logo{
+    margin-left: 10px;
+}
+.logo img{
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.icons{
+    margin-right: 10px;
+}
+.icons button{
+    padding: 5px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+}

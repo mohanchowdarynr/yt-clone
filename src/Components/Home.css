@@ -1,0 +1,7 @@
+.home{
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}

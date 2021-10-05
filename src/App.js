@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Navbar from './Components/Navbar';
+import {
+  Switch,
+  Route
+} from "react-router-dom";
+import PrivateRoute from './Components/PrivateRoute';
+import Home from './Components/Home';
+import Login from './Components/Login';
+import Error from './Components/Error';
 
 function App() {
+  const [details,setDetails] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Switch>
+        <Route exact path="/">
+        <Login details={details} setDetails={setDetails}/>
+        </Route>
+        <Route path="/Error"><Error /></Route>
+        <PrivateRoute exact path="/Home" >
+          <Home />
+        </PrivateRoute>
+      </Switch>
     </div>
-  );
-}
+  )}
 
 export default App;
