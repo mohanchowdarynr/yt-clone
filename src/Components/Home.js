@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import "./Home.css";
+import "./home.css";
 
 const Home = () => {
-    
   const [list, setList] = useState([]);
-  const getVideoList = async ( ) => {
+  const getVideoList = async () => {
     try {
        const data = await axios.get("https://videolibback.omkarborude8354.repl.co/videos")
       console.log(data.data.videos);

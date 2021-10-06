@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import {
@@ -11,13 +10,13 @@ import Login from './Components/Login';
 import Error from './Components/Error';
 
 function App() {
-  const [details,setDetails] = useState([]);
+  
   return (
     <div className="App">
       <Navbar/>
       <Switch>
-        <Route exact path="/">
-        <Login details={details} setDetails={setDetails}/>
+      <Route exact path="/">
+        <Login />
         </Route>
         <Route path="/Error"><Error /></Route>
         <PrivateRoute exact path="/Home" >

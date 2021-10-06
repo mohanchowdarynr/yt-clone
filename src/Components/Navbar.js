@@ -11,7 +11,7 @@ const Navbar = () => {
             </div>
             <div className="icons">
             {
-                logged ? (<button onClick={() => handleUser()}>Sign out</button>) : (<h3>Explore </h3>)
+                logged ? (<button onClick={handleUser}>Sign out</button>) : <h3>Explore </h3>
             }
             </div>
         </div>

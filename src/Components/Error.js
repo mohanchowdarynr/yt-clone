@@ -5,7 +5,7 @@ import './error.css';
 const Error = () => {
     return (
         <div className="pop">
-            <h1>You are not loggedin</h1>
+            <h1>You need to login</h1>
             <Link to="/"><button>Login here</button></Link>
         </div>
     )
