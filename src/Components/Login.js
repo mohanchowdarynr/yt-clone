@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
 import { useUserProvider } from '../Context/UserContext';
+import Error from './Error';
 
 const Login = () => {
     const [user,setUser] = useState('');
     const [password,setPassword] = useState('');
-    const {handleUser} = useUserProvider();
+    const {logged,handleUser} = useUserProvider();
 
     const handleClick = () => {
        if(user && password){
@@ -17,7 +17,12 @@ const Login = () => {
     }
 
     return (
-        <div className="user">
+      <>
+      {
+        logged ? (
+          <Error /> )
+          : (
+          <div className="user">
             <h1>Login</h1>
             <div className="Name">
               <h3>username</h3>
@@ -27,11 +32,12 @@ const Login = () => {
             <h3>Password</h3>
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
-            <Link to="/Home">
             <button onClick={handleClick}>Login</button>
-            </Link>
         </div>
-    )
+        )
+      }
+        
+    </>)
 }
 
 export default Login

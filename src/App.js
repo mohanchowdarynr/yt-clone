@@ -10,7 +10,6 @@ import Login from './Components/Login';
 import Error from './Components/Error';
 
 function App() {
-  
   return (
     <div className="App">
       <Navbar/>
